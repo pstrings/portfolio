@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Suyash Sharma</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="static/assets/css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
+    <noscript>
+      <link rel="stylesheet" href="static/assets/css/noscript.css" />
+    </noscript>
+  </head>
+  <body class="is-preload landing">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1 id="logo"><a href="index.html">Suyash Sharma</a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="#one">About Me</a></li>
+            <li><a href="#two">Skills</a></li>
+            <li><a href="#four">Projects</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Banner -->
+      <section id="banner">
+        <div class="content">
+          <header>
+            <h2>Hi, I'm Suyash Sharma</h2>
+            <p>
+              Python Developer & Machine Learning Enthusiast<br />
+              Focused on building real-world, scalable solutions.
+            </p>
+          </header>
+          <span class="image"
+            ><img src="../static/images/profile.jpg" alt=""
+          /></span>
+        </div>
+        <a href="#one" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- One -->
+      <section id="one" class="spotlight style1 bottom">
+        <span class="image fit main"
+          ><img src="../static/images/image1.jpg" alt=""
+        /></span>
+        <div class="content">
+          <div class="container">
+            <div class="row">
+              <div class="col-4 col-12-medium">
+                <header>
+                  <h2>About Me</h2>
+                </header>
+              </div>
+              <div class="col-4 col-12-medium">
+                <p>
+                  I'm a Python developer and machine learning enthusiast who
+                  thrives on solving real-world engineering problems. My
+                  experience spans backend systems, automation, real-time data
+                  handling, and scalable bots. Passionate about clean
+                  architecture and rapid learning.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#two" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- Two -->
+      <section id="two" class="spotlight style2 right">
+        <span class="image fit main"
+          ><img src="../static/images/image2.jpg" alt=""
+        /></span>
+        <div class="content">
+          <header>
+            <h2>Primary Skills</h2>
+          </header>
+          <p>
+            <strong>Languages:</strong> Python, SQL<br />
+            <strong>Frameworks:</strong> SQLAlchemy, AioSQLite, asyncio<br />
+            <strong>Dev Tools:</strong> Git, GitHub, CI/CD<br />
+            <strong>Practices:</strong> Clean Architecture, SOLID, TDD
+          </p>
+        </div>
+        <a href="#three" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- Three -->
+      <section id="three" class="spotlight style3 left">
+        <span class="image fit main bottom"
+          ><img src="images/pic04.jpg" alt=""
+        /></span>
+        <div class="content">
+          <header>
+            <h2>Complementary Skills</h2>
+          </header>
+          <p>
+            <strong>API Design</strong><br />
+            <strong>Database Management:</strong> Real-time data, Relational
+            Modeling<br />
+            <strong>Problem Solving:</strong> Debugging, Optimization,
+            Refactoring<br />
+            <strong>Communication:</strong> Documentation, Collaboration,
+            Mentoring
+          </p>
+        </div>
+        <a href="#four" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- Four -->
+      <section id="four" class="wrapper style1 special fade-up">
+        <div class="container">
+          <header class="major">
+            <h2>Projects</h2>
+            <p>Here are some things I've built.</p>
+          </header>
+          <div class="box alt">
+            <div class="row gtr-uniform">
+              {% for project in projects %}
+              <section class="col-4 col-6-medium col-12-xsmall">
+                <span class="icon solid alt major {{ project.icon }}"></span>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+                <ul class="actions">
+                  <li>
+                    <a
+                      href="{{ project.link }}"
+                      class="button small"
+                      target="_blank"
+                      >View</a
+                    >
+                  </li>
+                </ul>
+              </section>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Five -->
+      <section id="five" class="wrapper style2 special fade">
+        <div class="container">
+          <header>
+            <h2>Contact Me</h2>
+          </header>
+          <form method="post" action="submit_form" class="cta">
+            <div class="row gtr-uniform gtr-50">
+              <div class="col-12">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  placeholder="Subject"
+                  required
+                />
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Enter your message"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <input type="submit" value="Send" class="fit primary" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li>
+            <a
+              href="https://github.com/pstrings"
+              class="icon brands alt fa-github"
+              target="_blank"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/sharma-suyash/"
+              class="icon brands alt fa-linkedin-in"
+              target="_blank"
+              ><span class="label">LinkedIn</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="mailto:sharmasuyash.053@gmail.com"
+              class="icon solid alt fa-envelope"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Suyash Sharma. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/js/jquery.scrolly.min.js"></script>
+    <script src="static/assets/js/jquery.dropotron.min.js"></script>
+    <script src="static/assets/js/jquery.scrollex.min.js"></script>
+    <script src="static/assets/js/browser.min.js"></script>
+    <script src="static/assets/js/breakpoints.min.js"></script>
+    <script src="static/assets/js/util.js"></script>
+    <script src="static/assets/js/main.js"></script>
+  </body>
+</html>
