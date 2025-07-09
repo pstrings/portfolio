@@ -36,10 +36,13 @@ def render_page(page_name):
 def submit_form():
     """Handle form submission."""
     if request.method == 'POST':
-        # Process the form data
-        data = request.form.to_dict()
-        # Here you can add code to save the data or send an email
-        write_to_csv(data)
+        try:
+            # Process the form data
+            data = request.form.to_dict()
+            # Here you can add code to save the data or send an email
+            write_to_csv(data)
+        except Exception as e:
+            return f"An error occurred while adding data to database: {e}", 500
 
         return redirect(url_for('home'))
     else:
